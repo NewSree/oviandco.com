@@ -1,0 +1,1798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ovi and Co (OPC) Private Limited — Integration is the future</title>
+  <meta name="description" content="AYUSH care, made whole. Cross-system medical literacy, a ₹15-a-day clinic management app, and six-doctor shared clinics open in 60 days." />
+  <link rel="icon" type="image/png" href="assets/logo-mark.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --violet: #6a4c9c;
+      --wordmark: #4d2f76;
+      --amethyst: #3a2a5e;
+      --surface: #ffffff;
+      --mist: #f2f3f6;
+      --lilac: #eee9f6;
+      --ink: #1e1b29;
+      --ink-muted: #5c5670;
+      --hairline: #dcd6e8;
+      --shadow-card: 0 1px 2px rgba(30,27,41,0.06), 0 8px 24px rgba(58,42,94,0.08);
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --radius-full: 999px;
+      --font-display: "Poppins", "Montserrat", system-ui, sans-serif;
+      --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+      --max-w: 1120px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 26px;
+      color: var(--ink);
+      background: var(--surface);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: var(--violet); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section { padding: 72px 0; }
+    .section-mist { background: var(--mist); border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); }
+    .section-amethyst { background: var(--amethyst); color: #ffffff; }
+
+    .eyebrow {
+      font-family: var(--font-body);
+      font-size: 12px;
+      line-height: 16px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--violet);
+      margin: 0 0 12px;
+    }
+    .section-amethyst .eyebrow { color: #d5c7ee; }
+
+    h1, h2, h3 {
+      font-family: var(--font-display);
+      margin: 0;
+      color: var(--ink);
+    }
+    .display-title {
+      font-size: clamp(36px, 5vw, 56px);
+      line-height: 1.08;
+      font-weight: 600;
+      letter-spacing: -0.015em;
+      color: var(--wordmark);
+    }
+    h2 {
+      font-size: clamp(26px, 3.2vw, 34px);
+      line-height: 1.22;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin-bottom: 16px;
+    }
+    .section-amethyst h2 { color: #ffffff; }
+    h3 {
+      font-size: 20px;
+      line-height: 28px;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    .lead {
+      font-size: 18px;
+      line-height: 28px;
+      color: var(--ink-muted);
+      max-width: 62ch;
+      margin: 0;
+    }
+    .section-amethyst .lead { color: #e2daf0; }
+
+    .tagline {
+      font-size: 13px;
+      line-height: 18px;
+      font-weight: 600;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--wordmark);
+      margin: 0 0 16px;
+    }
+
+    /* Header (Pure White ground per brand book) */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: var(--surface);
+      border-bottom: 1px solid var(--hairline);
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 76px;
+      gap: 20px;
+    }
+    .brand-link {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 0;
+      flex-shrink: 0;
+    }
+    .brand-link img {
+      height: 40px;
+      width: auto;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--ink);
+    }
+    .nav-links a:hover { color: var(--violet); text-decoration: none; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 600;
+      padding: 12px 22px;
+      border-radius: var(--radius-sm);
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: background 0.15s ease, border-color 0.15s ease;
+    }
+    .btn-primary {
+      background: var(--violet);
+      color: #ffffff;
+    }
+    .btn-primary:hover { background: var(--wordmark); text-decoration: none; }
+    .btn-secondary {
+      background: var(--surface);
+      color: var(--wordmark);
+      border-color: var(--hairline);
+    }
+    .btn-secondary:hover { background: var(--lilac); text-decoration: none; }
+
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: 1px solid var(--hairline);
+      border-radius: var(--radius-sm);
+      padding: 8px 10px;
+      color: var(--ink);
+      cursor: pointer;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 64px 0 72px;
+      background: var(--surface);
+      overflow: hidden;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+    .chip {
+      display: inline-block;
+      background: var(--lilac);
+      color: var(--wordmark);
+      font-size: 12px;
+      line-height: 16px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+    }
+    .hero-lead {
+      font-size: 19px;
+      line-height: 30px;
+      color: var(--ink-muted);
+      max-width: 54ch;
+      margin: 20px 0 28px;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+    .hero-meta {
+      font-size: 14px;
+      line-height: 22px;
+      color: var(--ink-muted);
+      padding-top: 20px;
+      border-top: 1px solid var(--hairline);
+    }
+    .hero-meta strong { color: var(--ink); font-weight: 600; }
+    .hero-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .hero-visual svg {
+      width: 100%;
+      max-width: 420px;
+      height: auto;
+    }
+
+    /* Grids & Cards */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+      margin-top: 32px;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 28px;
+      margin-top: 32px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--hairline);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      box-shadow: var(--shadow-card);
+    }
+    .card p {
+      margin: 0;
+      color: var(--ink-muted);
+      font-size: 15px;
+      line-height: 24px;
+    }
+    .card-badge {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--violet);
+      background: var(--lilac);
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      margin-bottom: 14px;
+    }
+    .root-note {
+      margin-top: 28px;
+      padding: 16px 20px;
+      background: var(--lilac);
+      border-left: 3px solid var(--violet);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    /* Journey Flow */
+    .flow-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      margin-top: 28px;
+      padding: 16px 20px;
+      background: var(--surface);
+      border: 1px solid var(--hairline);
+      border-radius: var(--radius-md);
+    }
+    .flow-step {
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--wordmark);
+    }
+    .flow-arrow { color: var(--violet); font-weight: 600; }
+    .flow-audience {
+      margin-left: auto;
+      font-size: 14px;
+      color: var(--ink-muted);
+    }
+
+    /* Clinic Hexagon Section */
+    .clinic-layout {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 40px;
+      align-items: center;
+      margin-top: 28px;
+    }
+    .hex-wrapper {
+      background: var(--surface);
+      border: 1px solid var(--hairline);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      text-align: center;
+    }
+    .hex-wrapper svg {
+      width: 100%;
+      max-width: 390px;
+      height: auto;
+      margin: 0 auto;
+    }
+    .hex-partner { cursor: pointer; outline: none; }
+    .hex-partner .hex-shape { transition: fill 0.15s ease, stroke 0.15s ease; }
+    .hex-partner:hover .hex-shape,
+    .hex-partner:focus .hex-shape,
+    .hex-partner.active .hex-shape {
+      fill: #dfd5f0;
+      stroke: var(--violet);
+    }
+    .hex-center { cursor: pointer; outline: none; }
+    .hex-caption {
+      margin-top: 14px;
+      padding: 12px 14px;
+      background: var(--mist);
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+      line-height: 20px;
+      color: var(--ink-muted);
+      min-height: 62px;
+      text-align: left;
+    }
+    .hex-caption strong {
+      display: block;
+      color: var(--wordmark);
+      font-size: 14px;
+      margin-bottom: 2px;
+    }
+
+    .spec-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 18px 0 22px;
+    }
+    .spec-tag {
+      font-size: 13px;
+      color: var(--ink);
+      background: var(--surface);
+      border: 1px solid var(--hairline);
+      border-radius: var(--radius-sm);
+      padding: 6px 12px;
+    }
+
+    .timeline-strip {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 24px;
+    }
+    .day-box {
+      background: var(--surface);
+      border: 1px solid var(--hairline);
+      border-radius: var(--radius-sm);
+      padding: 14px;
+    }
+    .day-box span {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--violet);
+      margin-bottom: 4px;
+    }
+    .day-box strong {
+      font-size: 14px;
+      line-height: 20px;
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    /* Table */
+    .table-wrap {
+      overflow-x: auto;
+      margin-top: 28px;
+      border: 1px solid var(--hairline);
+      border-radius: var(--radius-md);
+      background: var(--surface);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      line-height: 22px;
+      text-align: left;
+    }
+    thead { background: var(--lilac); }
+    th {
+      font-weight: 600;
+      color: var(--wordmark);
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--hairline);
+    }
+    td {
+      padding: 13px 16px;
+      border-bottom: 1px solid var(--hairline);
+      color: var(--ink);
+      vertical-align: top;
+    }
+    tbody tr:last-child td { border-bottom: none; }
+    td.muted { color: var(--ink-muted); }
+
+    /* Stats Band (Deep Amethyst) */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+      margin-top: 32px;
+    }
+    .stat-card {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: var(--radius-md);
+      padding: 24px;
+    }
+    .stat-num {
+      font-family: var(--font-display);
+      font-size: 36px;
+      line-height: 44px;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+    .stat-card p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 22px;
+      color: #dfd8ee;
+    }
+    .source-foot {
+      margin-top: 24px;
+      font-size: 13px;
+      color: #cfc6e4;
+    }
+
+    /* Founder Section */
+    .founder-grid {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 40px;
+      align-items: start;
+      margin-top: 28px;
+    }
+    .founder-photo-card {
+      background: var(--surface);
+      border: 1px solid var(--hairline);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+    }
+    .founder-photo-card img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+    }
+    .founder-photo-meta {
+      padding: 16px;
+      border-top: 1px solid var(--hairline);
+    }
+    .founder-photo-meta strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 16px;
+      color: var(--ink);
+    }
+    .founder-photo-meta > span {
+      display: block;
+      font-size: 13px;
+      line-height: 20px;
+      color: var(--ink-muted);
+    }
+    .founder-quote {
+      margin: 0 0 18px;
+      font-size: 18px;
+      line-height: 29px;
+      color: var(--ink);
+      padding-left: 18px;
+      border-left: 3px solid var(--violet);
+    }
+    .cred-list {
+      font-size: 14px;
+      line-height: 22px;
+      color: var(--ink-muted);
+      margin: 0 0 24px;
+    }
+
+    .milestones {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      border-top: 1px solid var(--hairline);
+    }
+    .milestones li {
+      display: grid;
+      grid-template-columns: 165px 1fr;
+      gap: 16px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--hairline);
+      font-size: 14px;
+      line-height: 22px;
+    }
+    .milestones .m-date {
+      font-weight: 600;
+      color: var(--wordmark);
+    }
+    .milestones .m-text { color: var(--ink); }
+    .milestones .m-sub {
+      display: block;
+      color: var(--ink-muted);
+      font-size: 13px;
+      margin-top: 2px;
+    }
+
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-top: 28px;
+    }
+    .office-list {
+      list-style: none;
+      margin: 18px 0 0;
+      padding: 0;
+    }
+    .office-list li {
+      padding: 12px 0;
+      border-bottom: 1px solid var(--hairline);
+      font-size: 15px;
+      line-height: 24px;
+    }
+    .office-list li:last-child { border-bottom: none; }
+    .office-list strong {
+      display: block;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--violet);
+      margin-bottom: 4px;
+    }
+
+    .form-group { margin-bottom: 14px; }
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%;
+      font-family: var(--font-body);
+      font-size: 15px;
+      color: var(--ink);
+      background: var(--surface);
+      border: 1px solid var(--hairline);
+      border-radius: var(--radius-sm);
+      padding: 10px 12px;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      outline: 2px solid var(--violet);
+      outline-offset: 1px;
+    }
+
+    /* Footer (Deep Amethyst band; legal lockup on Pure White panel per brand guidelines) */
+    .site-footer {
+      background: var(--amethyst);
+      color: #e6e0f2;
+      padding: 56px 0 36px;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr 1fr;
+      gap: 32px;
+      align-items: start;
+      padding-bottom: 36px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+    }
+    .footer-logo-panel {
+      display: inline-block;
+      background: var(--surface);
+      padding: 18px 22px;
+      border-radius: var(--radius-md);
+      margin-bottom: 16px;
+    }
+    .footer-logo-panel img {
+      width: 240px;
+      height: auto;
+    }
+    .footer-col h4 {
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #ffffff;
+      margin: 0 0 12px;
+    }
+    .footer-col p, .footer-col a {
+      font-size: 14px;
+      line-height: 22px;
+      color: #d7cee9;
+      margin: 0 0 8px;
+    }
+    .footer-col a:hover { color: #ffffff; }
+    .footer-links {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .footer-links li { margin-bottom: 8px; }
+    .footer-bottom {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+      padding-top: 24px;
+      font-size: 13px;
+      color: #c7bce0;
+    }
+
+    
+    
+    /* Academy Vocational Skilling Sub-section */
+    .sub-block {
+      margin-top: 44px;
+      padding-top: 36px;
+      border-top: 1px solid var(--hairline);
+    }
+    .sub-block h3.sub-heading {
+      font-size: 22px;
+      line-height: 30px;
+      font-weight: 600;
+      color: var(--wordmark);
+      margin: 0 0 8px;
+    }
+    .clean-list {
+      margin: 12px 0 0;
+      padding-left: 18px;
+      color: var(--ink-muted);
+      font-size: 14px;
+      line-height: 23px;
+    }
+    .clean-list li { margin-bottom: 6px; }
+    .clean-list strong { color: var(--ink); font-weight: 600; }
+
+    /* Director LinkedIn link inside founder card */
+    .director-linkedin {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-top: 12px;
+      padding: 10px 12px;
+      background: var(--mist);
+      border: 1px solid var(--hairline);
+      border-radius: var(--radius-sm);
+      color: var(--ink);
+      text-decoration: none;
+      transition: background 0.15s ease, border-color 0.15s ease;
+    }
+    .director-linkedin:hover {
+      background: var(--lilac);
+      border-color: var(--violet);
+      text-decoration: none;
+    }
+    .director-linkedin svg {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      margin-top: 2px;
+      color: var(--violet);
+    }
+    .director-linkedin .li-title {
+      display: block;
+      font-size: 13px;
+      line-height: 18px;
+      font-weight: 600;
+      color: var(--wordmark);
+    }
+    .director-linkedin .li-stats {
+      display: block;
+      font-size: 12px;
+      line-height: 17px;
+      color: var(--ink-muted);
+      margin-top: 2px;
+    }
+
+    /* Footer social icons — icon-only, unboxed, side by side with generous spacing */
+    .footer-social {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 24px;
+      margin-top: 20px;
+    }
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2px;
+      border: none;
+      background: transparent;
+      color: #e6e0f2 !important;
+      text-decoration: none;
+      transition: color 0.15s ease, transform 0.15s ease;
+    }
+    .social-link:hover {
+      color: #ffffff !important;
+      transform: translateY(-2px);
+      text-decoration: none;
+    }
+    .social-link svg {
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+    }
+
+    /* Philosophy & Brand Story section */
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 32px;
+      align-items: stretch;
+      margin-top: 28px;
+    }
+    .story-prose p {
+      margin: 0 0 16px;
+      color: var(--ink-muted);
+      font-size: 16px;
+      line-height: 27px;
+    }
+    .story-prose p:last-child { margin-bottom: 0; }
+    .story-prose strong { color: var(--ink); font-weight: 600; }
+    .brand-story-card {
+      background: var(--surface);
+      border: 1px solid var(--hairline);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 18px;
+    }
+    .brand-mark-row {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .brand-mark-tile {
+      width: 84px;
+      height: 84px;
+      flex-shrink: 0;
+      background: var(--surface);
+      border: 1px solid var(--hairline);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+    }
+    .brand-mark-tile img {
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+    }
+    .swatch-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--wordmark);
+      background: var(--lilac);
+      padding: 6px 12px;
+      border-radius: var(--radius-full);
+      align-self: flex-start;
+    }
+    .swatch-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--violet);
+      display: inline-block;
+    }
+
+    
+    /* Contact form dual-channel send actions (Email / WhatsApp) */
+    .send-label {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--ink-muted);
+      margin: 4px 0 10px;
+    }
+    .send-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .send-actions .btn svg {
+      width: 17px;
+      height: 17px;
+      flex-shrink: 0;
+    }
+    .btn-wa {
+      background: var(--surface);
+      color: var(--wordmark);
+      border-color: var(--violet);
+    }
+    .btn-wa:hover {
+      background: var(--lilac);
+      text-decoration: none;
+    }
+
+    /* Inline WhatsApp link in Office card */
+    .inline-contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+    }
+    .inline-wa-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--wordmark);
+      background: var(--lilac);
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      text-decoration: none;
+    }
+    .inline-wa-link:hover {
+      background: #dfd5f0;
+      text-decoration: none;
+    }
+    .inline-wa-link svg {
+      width: 15px;
+      height: 15px;
+      color: var(--violet);
+    }
+
+    /* Clean floating WhatsApp shortcut */
+    .floating-wa {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 60;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      background: var(--surface);
+      color: var(--wordmark);
+      border: 1px solid var(--hairline);
+      border-radius: var(--radius-full);
+      box-shadow: var(--shadow-card);
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.15s ease, border-color 0.15s ease;
+    }
+    .floating-wa:hover {
+      background: var(--lilac);
+      border-color: var(--violet);
+      text-decoration: none;
+    }
+    .floating-wa svg {
+      width: 20px;
+      height: 20px;
+      color: var(--violet);
+      flex-shrink: 0;
+    }
+    @media (max-width: 560px) {
+      .send-actions { grid-template-columns: 1fr; }
+      .floating-wa span { display: none; }
+      .floating-wa { padding: 12px; }
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid, .story-grid, .clinic-layout, .founder-grid, .contact-grid, .footer-top {
+        grid-template-columns: 1fr;
+      }
+      .grid-3, .stats-grid { grid-template-columns: 1fr; }
+      .grid-2 { grid-template-columns: 1fr; }
+      .timeline-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .founder-photo-card { max-width: 300px; }
+      .hero-visual { order: -1; }
+      .hero-visual svg { max-width: 280px; }
+    }
+
+    @media (max-width: 760px) {
+      .menu-toggle { display: inline-flex; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 76px;
+        left: 0;
+        right: 0;
+        background: var(--surface);
+        border-bottom: 1px solid var(--hairline);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 16px 24px 20px;
+        gap: 14px;
+      }
+      .nav-links.open { display: flex; }
+      .milestones li { grid-template-columns: 1fr; gap: 4px; }
+      .flow-audience { margin-left: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#top" class="brand-link" aria-label="Ovi and Co home">
+        <img src="assets/compact-violet.png" alt="Ovi and Co" width="144" height="40" />
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle navigation">
+        Menu
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#gaps">The Gaps</a></li>
+        <li><a href="#story">Our Story</a></li>
+        <li><a href="#literacy">Academy &amp; OJIM</a></li>
+        <li><a href="#apps">Three Apps</a></li>
+        <li><a href="#clinics">Shared Clinics</a></li>
+        <li><a href="#model">Pricing</a></li>
+        <li><a href="#founder">Founder</a></li>
+        <li><a href="#contact" class="btn btn-primary" style="padding: 9px 16px; color: #ffffff;">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="chip-row">
+            <span class="chip">Healthcare, MedTech &amp; Life Sciences</span>
+            <span class="chip">Education &amp; Skilling</span>
+          </div>
+          <p class="tagline">Integration is the future</p>
+          <h1 class="display-title">AYUSH care, made whole.</h1>
+          <p class="hero-lead">
+            Cross-system medical literacy. A ₹15-a-day clinic app. Six-doctor shared clinics, open in 60 days.
+          </p>
+          <div class="hero-actions">
+            <a href="#clinics" class="btn btn-primary">Explore the Hexagon Model</a>
+            <a href="#apps" class="btn btn-secondary">See the Three Apps</a>
+          </div>
+          <div class="hero-meta">
+            <strong>Ovi and Co (OPC) Private Limited</strong> · DPIIT-recognised startup (<strong>DIPP291703</strong>)<br />
+            <strong>CIN: U86201KL2026OPC106937</strong> · <strong>DIN: 11985055</strong> · Varappetty, Kothamangalam, Kerala
+          </div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <svg viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="276.00,92.22 243.00,149.38 177.00,149.38 144.00,92.22 177.00,35.06 243.00,35.06" fill="#ffffff" stroke="#e3ddf0" stroke-width="1.5"/>
+<polygon points="378.00,151.11 345.00,208.27 279.00,208.27 246.00,151.11 279.00,93.95 345.00,93.95" fill="#ffffff" stroke="#e3ddf0" stroke-width="1.5"/>
+<polygon points="378.00,268.89 345.00,326.05 279.00,326.05 246.00,268.89 279.00,211.73 345.00,211.73" fill="#ffffff" stroke="#e3ddf0" stroke-width="1.5"/>
+<polygon points="276.00,327.78 243.00,384.94 177.00,384.94 144.00,327.78 177.00,270.62 243.00,270.62" fill="#ffffff" stroke="#e3ddf0" stroke-width="1.5"/>
+<polygon points="174.00,268.89 141.00,326.05 75.00,326.05 42.00,268.89 75.00,211.73 141.00,211.73" fill="#ffffff" stroke="#e3ddf0" stroke-width="1.5"/>
+<polygon points="174.00,151.11 141.00,208.27 75.00,208.27 42.00,151.11 75.00,93.95 141.00,93.95" fill="#ffffff" stroke="#e3ddf0" stroke-width="1.5"/>
+<polygon points="276.00,210.00 243.00,267.16 177.00,267.16 144.00,210.00 177.00,152.84 243.00,152.84" fill="#f6f4fa" stroke="#e3ddf0" stroke-width="1.5"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Three Gaps -->
+    <section id="gaps" class="section section-mist">
+      <div class="container">
+        <p class="eyebrow">The Problem</p>
+        <h2>Three gaps. One patient pays for all of them.</h2>
+        <div class="grid-3">
+          <article class="card">
+            <span class="card-badge">Gap 01</span>
+            <h3>Unseen interactions</h3>
+            <p>Patients take AYUSH and modern medicines together and tell neither doctor. Herb-drug interactions go unnoticed.</p>
+          </article>
+          <article class="card">
+            <span class="card-badge">Gap 02</span>
+            <h3>Academy-to-practice gap</h3>
+            <p>Low pay drives bright students out. Most graduates struggle with thousands of shlokas, get no placement, and fall back on symptom relief.</p>
+          </article>
+          <article class="card">
+            <span class="card-badge">Gap 03</span>
+            <h3>The solo clinic trap</h3>
+            <p>Doctors run finance, HR, and marketing alone. Prime sites cost too much. Small-town clinics sit empty while skilled youth leave for jobs abroad.</p>
+          </article>
+        </div>
+        <div class="root-note">
+          The root: AYUSH care has no shared system for knowledge, software, or infrastructure.
+        </div>
+      </div>
+    </section>
+
+    <!-- Philosophy & Brand Story -->
+    <section id="story" class="section">
+      <div class="container">
+        <p class="eyebrow">Philosophy &amp; Brand Story</p>
+        <h2>Seeing the whole patient. Seeing the whole elephant.</h2>
+
+        <div class="story-grid">
+          <div class="card story-prose">
+            <span class="card-badge">Why Integrative Medicine</span>
+            <h3>Structuring AYUSH. Partnering with modern medicine.</h3>
+            <p>
+              AYUSH streams today are neither structured nor organised as a unified clinical system. That lack of structure is why they are frequently criticised and dismissed as parallel disciplines—even though their therapeutic possibilities are deeply impressive to anyone who genuinely understands their clinical grace. Most people remain unaware of what authentic AYUSH care can offer, and one-sided ill-health campaigns further keep them from seeing the truth.
+            </p>
+            <p>
+              <strong>We do not oppose modern medicine.</strong> Modern medicine is the finest emergency management system humankind has ever built. Our mission is to popularise true <strong>integrative medicine</strong>—where doctors from every stream understand each other's possibilities and limitations, and join hands to see the whole picture of the patient, help them recover from illness, and restore lasting well-being.
+            </p>
+          </div>
+
+          <div class="brand-story-card">
+            <div>
+              <div class="brand-mark-row">
+                <div class="brand-mark-tile">
+                  <img src="assets/logo-mark.png" alt="Ovi and Co faceted violet elephant mark" width="64" height="64" />
+                </div>
+                <div>
+                  <span class="card-badge" style="margin-bottom: 8px;">Our Emblem</span>
+                  <h3 style="margin-bottom: 0;">The Whole Elephant</h3>
+                </div>
+              </div>
+              <p style="margin: 16px 0 0; color: var(--ink-muted); font-size: 15px; line-height: 25px;">
+                The Ovi and Co logo is derived from multiple concepts joining together into a single complete form—just as distinct streams of medical knowledge unite around one patient. In Indian mythology and thought, the elephant represents <strong style="color: var(--ink);">ultimate wisdom</strong>: seeing the whole rather than isolated fragments.
+              </p>
+              <p style="margin: 12px 0 0; color: var(--ink-muted); font-size: 15px; line-height: 25px;">
+                That is why our brand psychology centres on <strong style="color: var(--ink);">Sahasrara Violet</strong>—the hue of the crown chakra, symbolising higher awareness, clarity, and wholeness.
+              </p>
+            </div>
+            <span class="swatch-pill"><span class="swatch-dot" aria-hidden="true"></span> Sahasrara Violet · #6A4C9C</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Literacy, Not Cross-Pathy -->
+    <section id="literacy" class="section section-mist">
+      <div class="container">
+        <p class="eyebrow">Knowledge &amp; Standards</p>
+        <h2>Literacy, not cross-pathy.</h2>
+        <p class="lead">
+          Cross-system medical literacy means enough modern pharmacology to spot an interaction and refer safely, strictly within each state's legal limits.
+        </p>
+        <div class="grid-3">
+          <article class="card">
+            <span class="card-badge">Education &amp; Skilling</span>
+            <h3>Ovi Academy</h3>
+            <p>OPD judgement for practitioners and NSQF-aligned vocational training for youth, taught by expert doctors from each discipline. Certifications aligned with Skill India, SWAYAM Plus, and ASAP Kerala, including Therapeutic Yoga &amp; Wellness.</p>
+          </article>
+          <article class="card">
+            <span class="card-badge">Books &amp; Courses</span>
+            <h3>Ovi Publications</h3>
+            <p>Separate publisher releasing stream-wise pharmacology of specific classical yogams with onboarded researchers across each discipline, plus OPD management courses and books available in both PDF and printed multicolour editions.</p>
+          </article>
+          <article class="card">
+            <span class="card-badge">Research · eISSN Initiated</span>
+            <h3>OJIM Journal</h3>
+            <p>Ovi Journal of Integrative Medicine, a separate entity built to international indexing standards and linked to the Ovi Practitioners App. Doctors can self-publish case reports and case series with built-in AI formatting before Editorial Board review. Initial steps for eISSN are underway with onboarded expert mentorship.</p>
+          </article>
+        </div>
+
+        <div class="flow-bar">
+          <span class="flow-step">Learn</span>
+          <span class="flow-arrow">&rarr;</span>
+          <span class="flow-step">Certify</span>
+          <span class="flow-arrow">&rarr;</span>
+          <span class="flow-step">Practise</span>
+          <span class="flow-arrow">&rarr;</span>
+          <span class="flow-step">Publish</span>
+          <span class="flow-audience">For AYUSH students, house surgeons, practitioners, and local youth</span>
+        </div>
+
+        <!-- Trained Workforce & Vocational Skilling Model -->
+        <div class="sub-block" id="skilling">
+          <p class="eyebrow">Trained Workforce Pipeline</p>
+          <h3 class="sub-heading">Hybrid Skilling &amp; Compulsory Clinical Internship</h3>
+          <p class="lead" style="font-size: 16px; line-height: 26px;">
+            Five 9-month (1,305-hour) allied vocational certification programmes have been submitted to ASAP Kerala—combining daily digital lessons, weekly district audio-visual sessions, and supervised full-time hospital and clinic internships.
+          </p>
+
+          <div class="grid-2" style="margin-top: 24px;">
+            <article class="card">
+              <span class="card-badge">Phase 1 · Months 1–3 (Weeks 1–12)</span>
+              <h3>Daily Modules &amp; District Orientation</h3>
+              <ul class="clean-list">
+                <li><strong>Daily lessons:</strong> 20-minute chapter modules released Monday to Friday across 12 weeks.</li>
+                <li><strong>Weekly audio-visual classes:</strong> Held at a district centre from 10:30 AM to 3:00 PM (12:30 PM – 1:00 PM lunch break).</li>
+                <li><strong>Monthly workshops &amp; add-ons:</strong> Monthly external-faculty workshops, plus optional hybrid (online + offline) add-on courses in Language Development, Grooming, Beauty Care, Kalari Uzhichil, and more.</li>
+                <li><strong>Learning kit:</strong> Printed training manual and branded uniform provided for every student.</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <span class="card-badge">Phase 2 · From Week 13 Monday</span>
+              <h3>Compulsory Internship, Assessment &amp; Placement</h3>
+              <ul class="clean-list">
+                <li><strong>Hospital &amp; clinic placement:</strong> Initial batches intern at partnered hospitals until Ovi clinics are fully operational—8-hour daily shift (flexible to host hospital or Ovi clinic shift timings), with a weekly off plus 1 additional off per month.</li>
+                <li><strong>Student support:</strong> Food and accommodation are handled by the host clinic.</li>
+                <li><strong>Attendance &amp; evaluation:</strong> Minimum 80% attendance across contact classes and internship; weekly and end-of-term assignments, internal evaluation, viva voce, and online examination.</li>
+                <li><strong>Results &amp; hiring:</strong> Results published within 2 weeks after internship; certified graduates can apply directly for Ovi clinic vacancies on this website.</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="table-wrap" style="margin-top: 24px;">
+            <table>
+              <thead>
+                <tr>
+                  <th>Proposed Course (Submitted to ASAP Kerala)</th>
+                  <th>Target NSQF</th>
+                  <th>Duration</th>
+                  <th>Annual Intake</th>
+                  <th>Minimum Eligibility</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Certificate in Ayurvedic Pharmacy &amp; GMP (CAPG)</strong></td>
+                  <td>Level 4 / 4.5</td>
+                  <td class="muted">9 Months (1,305 hrs)</td>
+                  <td>3rd Monday of January</td>
+                  <td class="muted">Plus Two</td>
+                </tr>
+                <tr>
+                  <td><strong>Certificate in Ayurvedic Clinical Care &amp; Nursing (CACN)</strong></td>
+                  <td>Level 4 / 4.5</td>
+                  <td class="muted">9 Months (1,305 hrs)</td>
+                  <td>3rd Monday of January</td>
+                  <td class="muted">Plus Two</td>
+                </tr>
+                <tr>
+                  <td><strong>Certificate in Panchakarma Therapy (CPT)</strong></td>
+                  <td>Level 4</td>
+                  <td class="muted">9 Months (1,305 hrs)</td>
+                  <td>3rd Monday of January</td>
+                  <td class="muted">SSLC</td>
+                </tr>
+                <tr>
+                  <td><strong>Certificate in Ayurvedic Nutrition &amp; Dietetics (CAND)</strong></td>
+                  <td>Level 4.5</td>
+                  <td class="muted">9 Months (1,305 hrs)</td>
+                  <td>3rd Monday of July</td>
+                  <td class="muted">Plus Two</td>
+                </tr>
+                <tr>
+                  <td><strong>Certificate in Therapeutic Yoga &amp; Wellness (CTYW)</strong></td>
+                  <td>Level 4</td>
+                  <td class="muted">9 Months (1,305 hrs)</td>
+                  <td>3rd Monday of July</td>
+                  <td class="muted">SSLC</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Three Apps -->
+    <section id="apps" class="section">
+      <div class="container">
+        <p class="eyebrow">Software Backbone</p>
+        <h2>Three apps run the whole model.</h2>
+        <div class="grid-3">
+          <article class="card">
+            <span class="card-badge">₹15 a day</span>
+            <h3>Ovi Clinic Management App</h3>
+            <p>Built on Zoho, ABHA-friendly, and API-ready for AYUSH language models. Classical texts and research give referenced medicine suggestions and interaction alerts. Billed on 300 working days: ₹4,500/year; Ovi Academy and OJIM add-ons ₹4,500 each.</p>
+          </article>
+          <article class="card">
+            <span class="card-badge">₹450 to join</span>
+            <h3>Ovi Practitioners App</h3>
+            <p>View the live hexagon booking heat map across India. Lock a location for ₹45,000 (or ₹15,000 upfront + balance in 30 days), adjusted against setup share and refunded if unfilled in 6 months. Six partners in: the shutter opens. Connected directly with OJIM for AI-formatted case report and case series submission.</p>
+          </article>
+          <article class="card">
+            <span class="card-badge">Staff App</span>
+            <h3>Ovian</h3>
+            <p>Payroll, attendance by face and GPS punch, leave tracking, and duty rosters for every Ovi clinic staff member directly on their phone.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Shared Clinics / 6-Doctor Hexagon -->
+    <section id="clinics" class="section section-mist">
+      <div class="container">
+        <p class="eyebrow">Fractional Infrastructure</p>
+        <h2>Six doctors. One roof. Open in 60 days.</h2>
+        <p class="lead">
+          Six local registered AYUSH doctors and Ovi and Co form one LLP per city hexagon to convert a 1,800–2,250 sq. ft. long-lease space to NABH standards.
+        </p>
+
+        <div class="clinic-layout">
+          <div class="hex-wrapper">
+            <svg viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Six AYUSH doctor partners surrounding Ovi and Co in a honeycomb hexagon">
+              
+    <g class="hex-partner" tabindex="0" role="button" aria-label="Partner 1: 2 weekly 4-hr OPD slots · 1/6th LLP setup share" data-title="Partner 1 · Registered AYUSH RMP" data-desc="2 weekly 4-hr OPD slots · 1/6th LLP setup share">
+      <polygon points="286.00,97.02 253.00,154.18 187.00,154.18 154.00,97.02 187.00,39.87 253.00,39.87" fill="#eee9f6" stroke="#ffffff" stroke-width="2" class="hex-shape"/>
+      <g transform="translate(220.00,97.02)">
+  <g fill="none" stroke="#6a4c9c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="-6" cy="-7" r="5"/>
+    <path d="M-16 11c0-5 4.2-8.5 10-8.5s10 3.5 10 8.5"/>
+    <circle cx="8.5" cy="-5.5" r="4"/>
+    <path d="M8.5 2.5c4.5 0 8 2.8 8 7.5"/>
+  </g>
+</g>
+    </g>
+
+    <g class="hex-partner" tabindex="0" role="button" aria-label="Partner 2: 2 weekly 4-hr OPD slots · 1/6th LLP setup share" data-title="Partner 2 · Registered AYUSH RMP" data-desc="2 weekly 4-hr OPD slots · 1/6th LLP setup share">
+      <polygon points="392.50,158.51 359.50,215.67 293.50,215.67 260.50,158.51 293.50,101.35 359.50,101.35" fill="#eee9f6" stroke="#ffffff" stroke-width="2" class="hex-shape"/>
+      <g transform="translate(326.50,158.51)">
+  <g fill="none" stroke="#6a4c9c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="-6" cy="-7" r="5"/>
+    <path d="M-16 11c0-5 4.2-8.5 10-8.5s10 3.5 10 8.5"/>
+    <circle cx="8.5" cy="-5.5" r="4"/>
+    <path d="M8.5 2.5c4.5 0 8 2.8 8 7.5"/>
+  </g>
+</g>
+    </g>
+
+    <g class="hex-partner" tabindex="0" role="button" aria-label="Partner 3: 2 weekly 4-hr OPD slots · 1/6th LLP setup share" data-title="Partner 3 · Registered AYUSH RMP" data-desc="2 weekly 4-hr OPD slots · 1/6th LLP setup share">
+      <polygon points="392.50,281.49 359.50,338.65 293.50,338.65 260.50,281.49 293.50,224.33 359.50,224.33" fill="#eee9f6" stroke="#ffffff" stroke-width="2" class="hex-shape"/>
+      <g transform="translate(326.50,281.49)">
+  <g fill="none" stroke="#6a4c9c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="-6" cy="-7" r="5"/>
+    <path d="M-16 11c0-5 4.2-8.5 10-8.5s10 3.5 10 8.5"/>
+    <circle cx="8.5" cy="-5.5" r="4"/>
+    <path d="M8.5 2.5c4.5 0 8 2.8 8 7.5"/>
+  </g>
+</g>
+    </g>
+
+    <g class="hex-partner" tabindex="0" role="button" aria-label="Partner 4: 2 weekly 4-hr OPD slots · 1/6th LLP setup share" data-title="Partner 4 · Registered AYUSH RMP" data-desc="2 weekly 4-hr OPD slots · 1/6th LLP setup share">
+      <polygon points="286.00,342.98 253.00,400.13 187.00,400.13 154.00,342.98 187.00,285.82 253.00,285.82" fill="#eee9f6" stroke="#ffffff" stroke-width="2" class="hex-shape"/>
+      <g transform="translate(220.00,342.98)">
+  <g fill="none" stroke="#6a4c9c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="-6" cy="-7" r="5"/>
+    <path d="M-16 11c0-5 4.2-8.5 10-8.5s10 3.5 10 8.5"/>
+    <circle cx="8.5" cy="-5.5" r="4"/>
+    <path d="M8.5 2.5c4.5 0 8 2.8 8 7.5"/>
+  </g>
+</g>
+    </g>
+
+    <g class="hex-partner" tabindex="0" role="button" aria-label="Partner 5: 2 weekly 4-hr OPD slots · 1/6th LLP setup share" data-title="Partner 5 · Registered AYUSH RMP" data-desc="2 weekly 4-hr OPD slots · 1/6th LLP setup share">
+      <polygon points="179.50,281.49 146.50,338.65 80.50,338.65 47.50,281.49 80.50,224.33 146.50,224.33" fill="#eee9f6" stroke="#ffffff" stroke-width="2" class="hex-shape"/>
+      <g transform="translate(113.50,281.49)">
+  <g fill="none" stroke="#6a4c9c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="-6" cy="-7" r="5"/>
+    <path d="M-16 11c0-5 4.2-8.5 10-8.5s10 3.5 10 8.5"/>
+    <circle cx="8.5" cy="-5.5" r="4"/>
+    <path d="M8.5 2.5c4.5 0 8 2.8 8 7.5"/>
+  </g>
+</g>
+    </g>
+
+    <g class="hex-partner" tabindex="0" role="button" aria-label="Partner 6: 2 weekly 4-hr OPD slots · 1/6th LLP setup share" data-title="Partner 6 · Registered AYUSH RMP" data-desc="2 weekly 4-hr OPD slots · 1/6th LLP setup share">
+      <polygon points="179.50,158.51 146.50,215.67 80.50,215.67 47.50,158.51 80.50,101.35 146.50,101.35" fill="#eee9f6" stroke="#ffffff" stroke-width="2" class="hex-shape"/>
+      <g transform="translate(113.50,158.51)">
+  <g fill="none" stroke="#6a4c9c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="-6" cy="-7" r="5"/>
+    <path d="M-16 11c0-5 4.2-8.5 10-8.5s10 3.5 10 8.5"/>
+    <circle cx="8.5" cy="-5.5" r="4"/>
+    <path d="M8.5 2.5c4.5 0 8 2.8 8 7.5"/>
+  </g>
+</g>
+    </g>
+    <g class="hex-center" tabindex="0" role="button" aria-label="Ovi and Co: Central operator and LLP partner" data-title="Ovi and Co · Central Operator" data-desc="Manages lease, NABH fit-out, staffing, electricity, maintenance, and local marketing.">
+      <polygon points="286.00,220.00 253.00,277.16 187.00,277.16 154.00,220.00 187.00,162.84 253.00,162.84" fill="#ffffff" stroke="#dcd6e8" stroke-width="1.5"/>
+      <image href="assets/logo-mark.png" x="178.00" y="178.00" width="84" height="84" preserveAspectRatio="xMidYMid meet"/>
+    </g>
+            </svg>
+            <div class="hex-caption" id="hexCaption">
+              <strong>6 RMPs + Ovi and Co = 1 City Hexagon LLP</strong>
+              Select any hexagon above to inspect partner slots and operator responsibilities.
+            </div>
+          </div>
+
+          <div>
+            <h3>One Ovi Integrated Lifestyle Clinic</h3>
+            <p style="color: var(--ink-muted); margin-top: 6px;">
+              Built on abandoned clinics or prime commercial spaces chosen for car parking and easy access. Doctors split the setup cost six ways; Ovi and Co handles electricity, maintenance, trained staff, and local plus social media marketing with local vendors.
+            </p>
+            <div class="spec-tags">
+              <span class="spec-tag">1,800–2,250 sq. ft. (NABH)</span>
+              <span class="spec-tag">Visitor lounge</span>
+              <span class="spec-tag">Consultation rooms</span>
+              <span class="spec-tag">Clinic manager desk</span>
+              <span class="spec-tag">Physio &amp; yoga area</span>
+              <span class="spec-tag">Male therapy + toilet</span>
+              <span class="spec-tag">Female therapy + toilet</span>
+              <span class="spec-tag">Minor OT</span>
+              <span class="spec-tag">2–3 Pharmacy units</span>
+            </div>
+            <ul style="margin: 0; padding-left: 18px; color: var(--ink-muted); font-size: 15px; line-height: 25px;">
+              <li><strong style="color: var(--ink);">12 weekly four-hour slots</strong> booked in the app; a campus-hired AYUSH clinic manager runs the noon shift.</li>
+              <li><strong style="color: var(--ink);">4–5 outreach programmes a month</strong>—one every week—using the clinic e-vehicle.</li>
+              <li><strong style="color: var(--ink);">Protected structure:</strong> Separate LLP per hexagon for Indian-citizen RMPs (BAMS, BHMS, BSMS, BUMS, BNYS, BSRMS). 12-month lock-in, then shares resell to other RMPs in the app.</li>
+              <li><strong style="color: var(--ink);">Trained workforce:</strong> 9-month hybrid Ovi Academy certificate (3-month theory &amp; weekly district audio-visual orientation + 6-month compulsory hospital/clinic internship), pre-induction health screening, quarterly competency tests, two shifts (8 am–4 pm &amp; 12–8 pm), branded uniforms, and ESI for all eligible staff.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-strip">
+          <div class="day-box">
+            <span>Day 0</span>
+            <strong>LLP registration + site lease signed</strong>
+          </div>
+          <div class="day-box">
+            <span>Days 1–52</span>
+            <strong>NABH conversion, fit-out &amp; branding</strong>
+          </div>
+          <div class="day-box">
+            <span>Day 53</span>
+            <strong>Soft open &amp; workflow check</strong>
+          </div>
+          <div class="day-box">
+            <span>Day 60</span>
+            <strong>Inauguration + community medical camp</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Market & Rollout (Deep Amethyst dark band) -->
+    <section class="section section-amethyst">
+      <div class="container">
+        <p class="eyebrow">National Scale</p>
+        <h2>Half of India uses AYUSH care.</h2>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-num">46% – 53%</div>
+            <p>Rural and urban Indians who used AYUSH care in the past year.</p>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">7.55 lakh+</div>
+            <p>Registered AYUSH practitioners across India: the addressable user base for both apps.</p>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">59,643</div>
+            <p>AYUSH undergraduate seats every year forming the Ovi Academy pipeline.</p>
+          </div>
+        </div>
+
+        <div class="grid-3" style="margin-top: 28px;">
+          <div class="stat-card">
+            <h3 style="color: #ffffff;">1. Prove: Kerala</h3>
+            <p>First city hexagons around the pilot region through the founder's practitioner network.</p>
+          </div>
+          <div class="stat-card">
+            <h3 style="color: #ffffff;">2. Replicate: South India</h3>
+            <p>Standardised floor plan, vetted contractor process, and staffing—hexagon by hexagon across Tier-2 and Tier-3 towns.</p>
+          </div>
+          <div class="stat-card">
+            <h3 style="color: #ffffff;">3. Expand: National</h3>
+            <p>Self-serve Clinic Management App for solo clinics in every state, alongside online Ovi Academy courses.</p>
+          </div>
+        </div>
+        <p class="source-foot">
+          Every 1,000 subscribing clinics = ₹45 lakh/year in base app fees. Sources: NSSO Survey on Ayush 2022–23; Ministry of Ayush data via PIB, Dec 2025.
+        </p>
+      </div>
+    </section>
+
+    <!-- Pricing / Revenue Model -->
+    <section id="model" class="section">
+      <div class="container">
+        <p class="eyebrow">Business Model</p>
+        <h2>Who pays Ovi and Co, and how much.</h2>
+        <p class="lead">
+          The six doctor partners fund each clinic LLP. Ovi and Co (OPC) Private Limited earns from software, clinic setup, AMC, and training.
+        </p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Revenue Stream</th>
+                <th>Who Pays</th>
+                <th>Price &amp; Timing</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Ovi Clinic Management App</strong></td>
+                <td class="muted">External solo AYUSH clinics</td>
+                <td>₹4,500/year (₹15 × 300 working days)</td>
+              </tr>
+              <tr>
+                <td><strong>Add-on: Ovi Academy app</strong></td>
+                <td class="muted">Subscribing clinics</td>
+                <td>+₹4,500/year (1-year subscription)</td>
+              </tr>
+              <tr>
+                <td><strong>Add-on: OJIM</strong></td>
+                <td class="muted">Subscribing clinics</td>
+                <td>+₹4,500/year</td>
+              </tr>
+              <tr>
+                <td><strong>Practitioners App: entry</strong></td>
+                <td class="muted">Any registered AYUSH practitioner</td>
+                <td>₹450; unlocks national booking heat map</td>
+              </tr>
+              <tr>
+                <td><strong>Practitioners App: location lock</strong></td>
+                <td class="muted">Committed practitioner</td>
+                <td>₹45,000 (or ₹15,000 to lock + balance within 30 days); adjusted against setup share; refunded if unfilled in 6 months</td>
+              </tr>
+              <tr>
+                <td><strong>Clinic setup share + AMC</strong></td>
+                <td class="muted">Six LLP partners (paid to OPC)</td>
+                <td>Setup share at shutter-open; monthly AMC thereafter</td>
+              </tr>
+              <tr>
+                <td><strong>Clinic LLP partner share</strong></td>
+                <td class="muted">Each clinic LLP</td>
+                <td>Ongoing Ovi partner share per LLP agreement</td>
+              </tr>
+              <tr>
+                <td><strong>Ovi Academy courses</strong></td>
+                <td class="muted">Students, doctors, local youth</td>
+                <td>Course and certification fees</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Founder & Momentum -->
+    <section id="founder" class="section section-mist">
+      <div class="container">
+        <p class="eyebrow">Leadership &amp; Origin</p>
+        <h2>Built by a practising physician.</h2>
+
+        <div class="founder-grid">
+          <div class="founder-photo-card">
+            <img src="assets/founder.jpg" alt="Dr. Sreeraj K. Damodar, Founder and Director of Ovi and Co (OPC) Private Limited" width="640" height="640" />
+            <div class="founder-photo-meta">
+              <strong>Dr. Sreeraj K. Damodar</strong>
+              <span>Founder &amp; Director · BAMS (2005)</span>
+              <span style="color: var(--ink);"><strong>DIN: 11985055</strong></span>
+              <span>Varappetty, Kothamangalam, Kerala</span>
+              <!-- Update exact LinkedIn connections & followers count below when desired -->
+              <a class="director-linkedin" href="https://www.linkedin.com/in/drsreerajkdamodar/" target="_blank" rel="noopener noreferrer" aria-label="Dr. Sreeraj K. Damodar on LinkedIn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/>
+                  <rect x="2" y="9" width="4" height="12"/>
+                  <circle cx="4" cy="4" r="2"/>
+                </svg>
+                <span>
+                  <span class="li-title">LinkedIn · @drsreerajkdamodar</span>
+                  <span class="li-stats" id="directorLinkedInStats">View live connections &amp; followers</span>
+                </span>
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <blockquote class="founder-quote">
+              “I run my own clinic in Varappetty, Kerala. Managing it showed me the gaps Ovi and Co now closes. A five-session AMAI online discussion series between November 2025 and January 2026 mapped these sector-wide bottlenecks clearly—giving Ovi and Co the momentum to build an integrated system for the sector.”
+            </blockquote>
+            <p class="cred-list">
+              <strong>Credentials:</strong> BAMS (2005) · Diploma in Yoga Teachers Training (SRC Kerala) · Certified Yoga Instructor (S-VYASA) · NSQF Level 4 General Fitness Trainer · Former President, AMAI Muvattupuzha Area (2024–25).
+            </p>
+
+            <h3 style="margin-bottom: 12px;">Key Milestones</h3>
+            <ul class="milestones">
+              <li>
+                <span class="m-date">Nov 2025 – Jan 2026</span>
+                <span class="m-text">
+                  <strong>AMAI Online Discussion Series (5 sessions)</strong>
+                  <span class="m-sub">Held on 12 Nov, 11 Dec, 27 Dec 2025 and 8 Jan, 20 Jan 2026—examining clinical foundations, young doctors' clinic hurdles, and medicine manufacturing challenges. This series catalysed Ovi and Co's sector roadmap.</span>
+                </span>
+              </li>
+              <li>
+                <span class="m-date">29 May 2026</span>
+                <span class="m-text">KSUM Idea Grant sanctioned: ₹3,00,000</span>
+              </li>
+              <li>
+                <span class="m-date">5 Oct 2026</span>
+                <span class="m-text">Ovi and Co (OPC) Private Limited incorporated (<strong>CIN: U86201KL2026OPC106937</strong>)</span>
+              </li>
+              <li>
+                <span class="m-date">23 Oct 2026</span>
+                <span class="m-text">MSME Udyam, Import Export Code (IEC), and GST registrations completed</span>
+              </li>
+              <li>
+                <span class="m-date">2 Nov 2026</span>
+                <span class="m-text">DPIIT Startup India recognition granted (DIPP291703)</span>
+              </li>
+              <li>
+                <span class="m-date">4 Nov 2026</span>
+                <span class="m-text">Kerala Startup Mission (KSUM) Unique ID issued; discipline-wise expert doctors onboarded for Ovi Academy &amp; Ovi Publications</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact & Office -->
+    <section id="contact" class="section">
+      <div class="container">
+        <p class="eyebrow">Contact</p>
+        <h2>Partner with Ovi and Co.</h2>
+        <p class="lead">
+          Reach out for clinic software onboarding, hexagon LLP participation, Ovi Academy faculty collaborations, or institutional inquiries.
+        </p>
+
+        <div class="contact-grid">
+          <div class="card">
+            <h3>Office &amp; Pilot Clinic</h3>
+            <ul class="office-list">
+              <li>
+                <strong>Registered Entity</strong>
+                Ovi and Co (OPC) Private Limited<br />
+                <strong>CIN: U86201KL2026OPC106937</strong> · <strong>DIN: 11985055</strong> · <strong>DPIIT: DIPP291703</strong>
+              </li>
+              <li>
+                <strong>Office Address</strong>
+                IX/385-A, Mukalel Plaza, Kothamangalam - Vazhakkulam Road,<br />
+                Near GLPS Varappetty, Varappetty P.O.,<br />
+                Ernakulam, Kerala - 686691
+              </li>
+              <li>
+                <strong>Phone &amp; WhatsApp</strong>
+                <div class="inline-contact-row">
+                  <a href="tel:+919744240277">+91 9744 240 277</a>
+                  <a class="inline-wa-link" href="https://wa.me/919744240277" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp with Ovi and Co">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                <path d="M9.5 9.2c.2-.4.5-.5.8-.5h.5c.2 0 .4.1.5.4l.7 1.6c.1.2.1.5-.1.7l-.5.6c.5.9 1.3 1.7 2.2 2.2l.6-.5c.2-.2.5-.2.7-.1l1.6.7c.3.1.4.3.4.5v.5c0 .3-.1.6-.5.8-.6.4-1.5.5-2.6.1-1.6-.6-3.4-2.1-4.3-4.1-.4-1.1-.3-2 .1-2.6z"/>
+              </svg>
+                    <span>WhatsApp</span>
+                  </a>
+                </div>
+              </li>
+              <li>
+                <strong>Website &amp; Official Email</strong>
+                <a href="https://www.oviandco.com">www.oviandco.com</a> · <a href="mailto:care@oviandco.com">care@oviandco.com</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Send an Inquiry</h3>
+            <form id="contactForm">
+              <div class="form-group">
+                <label for="name">Full Name</label>
+                <input id="name" name="name" type="text" required placeholder="Dr. / Name" />
+              </div>
+              <div class="form-group">
+                <label for="role">Role</label>
+                <select id="role" name="role">
+                  <option value="AYUSH Practitioner (Hexagon LLP)">AYUSH Practitioner — Hexagon Clinic LLP</option>
+                  <option value="Solo Clinic (Clinic Management App)">Solo Clinic — Clinic Management App</option>
+                  <option value="Student / Faculty (Ovi Academy)">Student / Faculty — Ovi Academy</option>
+                  <option value="Certified Graduate — Ovi Clinic Vacancies">Certified Graduate — Ovi Clinic Vacancies</option>
+                  <option value="Investor / Institutional Partner">Investor / Institutional Partner</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="3" required placeholder="Location, registration discipline, or inquiry details"></textarea>
+              </div>
+              <p class="send-label">Choose where to send your drafted message:</p>
+              <div class="send-actions">
+                <button type="button" id="sendEmailBtn" class="btn btn-primary">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+              </svg>
+                  <span>Send via Email</span>
+                </button>
+                <button type="button" id="sendWhatsAppBtn" class="btn btn-wa">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                <path d="M9.5 9.2c.2-.4.5-.5.8-.5h.5c.2 0 .4.1.5.4l.7 1.6c.1.2.1.5-.1.7l-.5.6c.5.9 1.3 1.7 2.2 2.2l.6-.5c.2-.2.5-.2.7-.1l1.6.7c.3.1.4.3.4.5v.5c0 .3-.1.6-.5.8-.6.4-1.5.5-2.6.1-1.6-.6-3.4-2.1-4.3-4.1-.4-1.1-.3-2 .1-2.6z"/>
+              </svg>
+                  <span>Send via WhatsApp</span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <div class="footer-logo-panel">
+            <img src="assets/legal-lockup-violet.png" alt="Ovi and Co (OPC) Private Limited — Integration is the future" width="240" height="82" />
+          </div>
+          <p style="font-size: 14px; color: #d7cee9; margin: 0; max-width: 34ch;">
+            Cross-system medical literacy, clinical decision software, and shared NABH-grade AYUSH clinics.
+          </p>
+          <div class="footer-social" aria-label="Ovi and Co social media">
+            <a class="social-link" href="https://www.instagram.com/ovi_lifestyle_clinic/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+              </svg>
+            </a>
+            <a class="social-link" href="https://www.youtube.com/@ovi_lifestyle_clinic" target="_blank" rel="noopener noreferrer" aria-label="YouTube" title="YouTube">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/>
+                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/>
+              </svg>
+            </a>
+            <a class="social-link" href="https://www.facebook.com/share/1J5qS5zLrY/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+              </svg>
+            </a>
+            <a class="social-link" href="https://wa.me/919744240277" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" title="WhatsApp: +91 9744 240 277">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                <path d="M9.5 9.2c.2-.4.5-.5.8-.5h.5c.2 0 .4.1.5.4l.7 1.6c.1.2.1.5-.1.7l-.5.6c.5.9 1.3 1.7 2.2 2.2l.6-.5c.2-.2.5-.2.7-.1l1.6.7c.3.1.4.3.4.5v.5c0 .3-.1.6-.5.8-.6.4-1.5.5-2.6.1-1.6-.6-3.4-2.1-4.3-4.1-.4-1.1-.3-2 .1-2.6z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Office</h4>
+          <p>
+            IX/385-A, Mukalel Plaza,<br />
+            Kothamangalam - Vazhakkulam Road,<br />
+            Near GLPS Varappetty, Varappetty P.O.,<br />
+            Ernakulam, Kerala - 686691
+          </p>
+          <p style="margin-top: 10px;">
+            <a href="mailto:care@oviandco.com">care@oviandco.com</a><br />
+            <a href="tel:+919744240277">+91 9744 240 277</a>
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#gaps">The Three Gaps</a></li>
+            <li><a href="#story">Philosophy &amp; Brand Story</a></li>
+            <li><a href="#literacy">Ovi Academy &amp; OJIM</a></li>
+            <li><a href="#apps">Three Apps</a></li>
+            <li><a href="#clinics">Six-Doctor Hexagon Clinics</a></li>
+            <li><a href="#model">Pricing &amp; Revenue</a></li>
+            <li><a href="#founder">Founder &amp; Milestones</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 Ovi and Co (OPC) Private Limited. All rights reserved.</span>
+        <span><strong style="color: #ffffff;">CIN: U86201KL2026OPC106937</strong> · <strong style="color: #ffffff;">DIN: 11985055</strong> · <strong style="color: #ffffff;">DPIIT: DIPP291703</strong></span>
+      </div>
+    </div>
+  </footer>
+
+
+  <a class="floating-wa" href="https://wa.me/919744240277" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp: +91 9744 240 277">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                <path d="M9.5 9.2c.2-.4.5-.5.8-.5h.5c.2 0 .4.1.5.4l.7 1.6c.1.2.1.5-.1.7l-.5.6c.5.9 1.3 1.7 2.2 2.2l.6-.5c.2-.2.5-.2.7-.1l1.6.7c.3.1.4.3.4.5v.5c0 .3-.1.6-.5.8-.6.4-1.5.5-2.6.1-1.6-.6-3.4-2.1-4.3-4.1-.4-1.1-.3-2 .1-2.6z"/>
+              </svg>
+    <span>WhatsApp</span>
+  </a>
+
+  <script>
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    menuToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Hexagon interactive inspector
+    const caption = document.getElementById('hexCaption');
+    const hexNodes = document.querySelectorAll('.hex-partner, .hex-center');
+    hexNodes.forEach(node => {
+      const activate = () => {
+        hexNodes.forEach(n => n.classList.remove('active'));
+        node.classList.add('active');
+        caption.innerHTML = '<strong>' + node.dataset.title + '</strong>' + node.dataset.desc;
+      };
+      node.addEventListener('click', activate);
+      node.addEventListener('mouseenter', activate);
+      node.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activate(); }
+      });
+    });
+
+    // Static GitHub Pages dual-channel inquiry handler (Email or WhatsApp)
+    const contactForm = document.getElementById('contactForm');
+    function getDraftedInquiry() {
+      if (!contactForm.reportValidity()) return null;
+      return {
+        name: document.getElementById('name').value.trim(),
+        role: document.getElementById('role').value,
+        msg: document.getElementById('message').value.trim()
+      };
+    }
+
+    document.getElementById('sendEmailBtn').addEventListener('click', () => {
+      const data = getDraftedInquiry();
+      if (!data) return;
+      const subject = encodeURIComponent('Ovi and Co Website Inquiry — ' + data.role);
+      const body = encodeURIComponent('Name: ' + data.name + '\nRole: ' + data.role + '\n\nMessage:\n' + data.msg);
+      window.location.href = 'mailto:care@oviandco.com?subject=' + subject + '&body=' + body;
+    });
+
+    document.getElementById('sendWhatsAppBtn').addEventListener('click', () => {
+      const data = getDraftedInquiry();
+      if (!data) return;
+      const text = encodeURIComponent(
+        'Hello Ovi and Co,\n\n' +
+        'Name: ' + data.name + '\n' +
+        'Role: ' + data.role + '\n\n' +
+        'Message:\n' + data.msg
+      );
+      window.open('https://wa.me/919744240277?text=' + text, '_blank', 'noopener,noreferrer');
+    });
+
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+    });
+  </script>
+</body>
+</html>
